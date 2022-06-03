@@ -1,7 +1,7 @@
-package br.com.projetocrud.projetocrud.mapper;
+package br.com.gsbsolutions.mapper;
 
-import br.com.projetocrud.projetocrud.dto.UserDto;
-import br.com.projetocrud.projetocrud.models.User;
+import br.com.gsbsolutions.dto.UserDto;
+import br.com.gsbsolutions.models.User;
 import org.springframework.beans.BeanUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,12 @@ public class UserMapper {
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(user,userDto);
         return userDto;
+    }
+
+    public static User UserDtoToUser(UserDto userDto){
+        User user = new User();
+        BeanUtils.copyProperties(userDto, user);
+        return user;
     }
 
 }

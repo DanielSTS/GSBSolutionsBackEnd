@@ -1,4 +1,4 @@
-package br.com.projetocrud.projetocrud;
+package br.com.gsbsolutions;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

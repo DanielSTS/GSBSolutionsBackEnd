@@ -1,7 +1,7 @@
-package br.com.projetocrud.projetocrud.repositories;
+package br.com.gsbsolutions.repositories;
 
 
-import br.com.projetocrud.projetocrud.models.User;
+import br.com.gsbsolutions.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long > {

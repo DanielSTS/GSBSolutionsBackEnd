@@ -1,31 +1,30 @@
-package br.com.projetocrud.projetocrud.models;
+package br.com.gsbsolutions.dto;
 
-import javax.persistence.*;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
-@Entity
-@Table(name = "tb_user")
-public class User {
+public class UserDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @NotNull
     private String name;
     private String email;
     private String phone;
+    @NotNull
+    @Size(max = 11)
     private String cpf;
 
-
-    public User() {
+    public UserDto() {
     }
 
-    public User(Long id, String name, String email, String phone, String cpf) {
+    public UserDto(Long id, String name, String email, String phone, String cpf) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.cpf =  cpf;
+        this.cpf = cpf;
     }
 
     public Long getId() {
@@ -72,13 +71,12 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(phone, user.phone) && Objects.equals(cpf, user.cpf);
+        UserDto userDto = (UserDto) o;
+        return Objects.equals(id, userDto.id) && Objects.equals(name, userDto.name) && Objects.equals(email, userDto.email) && Objects.equals(phone, userDto.phone) && Objects.equals(cpf, userDto.cpf);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, email, phone, cpf);
     }
-
 }
